@@ -1,0 +1,95 @@
+/*For Mobile*/
+@media screen and (max-width: 480px) {
+  nav {
+    border-bottom: 0px;
+  }
+  nav ul {
+    max-height: 0px;
+  }
+  .showing {
+    max-height: 20em;
+  }
+  nav ul li {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    background: $main-black;
+    border: 1px solid white;
+    color: white;
+    &:before {
+      display: none;
+    }
+    &:hover {
+      background: $main-white;
+      color: $main-black;
+      border: 1px solid $main-black;
+      box-sizing: border-box;
+      font-weight: bold;
+      transition: all 0.6s ease-in-out;
+    }
+  }
+  nav .mobile {
+    display: block;
+    width: 100%;
+    position: fixed;
+    background: white;
+    border-top: 2px solid $main-black;
+    bottom: 0px;
+    margin: auto;
+    z-index: 1;
+  }
+  footer {
+    display: none;
+  }
+  .active{
+    height: 100%;
+  }
+  .equalizer{
+    width: 200px;
+    height: 200px;
+  }
+  .content {
+    width: 100%;
+    margin: 0px;
+
+    section{
+      display: none;
+    }
+  }
+
+  .wrapper {
+      width: 100%;
+
+      .title {
+          text-align: left;
+      }
+      button{
+        width: 80%;
+        margin: auto;
+        font-size: 0.6em;
+      }
+  }
+}
+
+/* for Tablest */
+@media screen and (max-width: 960px) {
+  nav ul {
+    text-align: center;
+  }
+  nav ul li:before{
+    width: 8%;
+  }
+  .content {
+    width: 100%;
+    padding: 0px;
+
+    section {
+      display: none;
+    }
+
+    article {
+      width: 98%;
+      font-size: 0.9em;
+    }
+  }
+}

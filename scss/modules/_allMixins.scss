@@ -1,0 +1,7 @@
+@mixin transition($time) {
+  -webkit-transition: max-height $time;
+  -ms-transition: max-height $time;
+  -moz-transition: max-height $time;
+  -o-transition: max-height $time;
+  transition: max-height $time;
+}

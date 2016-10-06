@@ -1,0 +1,19 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "* Dodaj w pliku **index.html** nagłówek **h1** z tekstem, np.  „Hello, Sassy!” i otwórz go w przeglądarce.\r * Utwórz katalog o nazwie **scss**, a w nim plik &ndash; **style.scss**. W pliku określ kolor nagłówka oraz kolor tła całej strony. Najlepiej tak, aby nagłówek był czytelny.\r * W pliku **index.html** wczytaj wygenerowany arkusz styli (z odpowiednim rozszerzeniem).\r * Skompiluj plik Sassa w znany Ci sposób (np. za pomocą Gulpa).\r * Sprawdź, czy wygenerował się odpowiedni katalog z plikiem **css**.\r * Odśwież stronę w przeglądarce.\r * Zmień kolor nagłówka w pliku **scss** i ponownie odśwież stronę.",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-font-import": "^0.1.2"
+  }
+}

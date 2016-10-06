@@ -1,0 +1,62 @@
+nav {
+  top: 0;
+  background-color: $main-white;
+  color: $main-black;
+  transition: all 0.6s ease-in-out;
+  ul {
+    overflow: hidden;
+    padding: 0px;
+    text-align: left;
+    position:relative;
+    @include transition(.6s); /*transition for page change animation */
+
+    li {
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        border-radius: 5px;
+        width: 5%;
+        display:inline-block;
+        top: 2px;
+        height: 5px;
+        -webkit-transition: all .5s ease-in;
+        -moz-transition: all .5s ease-in;
+        -o-transition: all .5s ease-in;
+        transition: all .5s ease-in;
+      }
+
+      &:hover:before {
+        background: $main-black;
+        transition: all 0.3s ease-in;
+        transform: translate3d(0, 10px, 0);
+      }
+    }
+
+  }
+  .mobile {
+    width:100%;
+    background-color: $invesible-background;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+
+    h1 {
+      float: left;
+      line-height: 1.2em;
+      font-family: 'Raleway', sans-serif;
+      color: $main-black;
+      font-size: 1.8em;
+      padding: 5px;
+    }
+  }
+}

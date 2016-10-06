@@ -1,0 +1,106 @@
+body {
+  height: 100vh;
+  background-image: url("../images/Main_Page.jpg");  /* wallpaper was downloaded from http://wallpaperswide.com/ */
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+.page {
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+  transition: all 0.6s ease-in-out;
+  position: relative;
+}
+
+.main {
+  background: $main-white;
+}
+
+.music {
+  background: $background-color;
+}
+
+.about {
+  background: $background-color;
+}
+
+.contact {
+  background: $background-color;
+}
+
+.active {
+  height: 90%;
+}
+
+footer {
+  width: 100%;
+  background-color: $main-black;
+  position: fixed;
+  text-align: center;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  line-height: 2em;
+
+  .soundcloud {
+    padding-top: 7px;
+  }
+
+  p {
+    font-family: 'Raleway', sans-serif;
+    color: $main-white;
+    font-size: 0.6em;
+    padding-top: 9px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+
+  %box {
+    width: 100%;
+    box-sizing: border-box;
+    background-color:$main-white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 2, 0, 0.8);
+    line-height: 1.5em;
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;
+    color: $main-black;
+    font-size: 0.9em;
+
+    h1 {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: underline;
+        color: $main-black;
+      }
+    }
+  }
+
+  .section {
+    @extend %box;
+  }
+  .player{
+    @extend %box;
+  }
+  article{
+    @extend %box;
+  }
+}
