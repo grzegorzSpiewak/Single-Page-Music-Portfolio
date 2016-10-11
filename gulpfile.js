@@ -5,21 +5,28 @@ var uglify = require('gulp-uglify');
 var pump = require('pump');
 var htmlmin = require('gulp-htmlmin');
 var imageop = require('gulp-image-optimization');
+var runSequence = require('run-sequence');
+var cleanCSS = require('gulp-clean-css');
 
 
-
-// compress Sass
+// Export SCSS to CSS
 gulp.task('watch', function() {
   console.log('watching!');
   return watch('./scss/**/*.scss', function () { //watch on scsss filles
     console.log('Change detected!');
     return gulp.src('./scss/style.scss')
-      .pipe(sass({outputStyle: 'compressed'})) // compression for css file
-      .pipe(gulp.dest('./dist/css'))
+      .pipe(sass({outputStyle: 'expanded'})) // compression for css file
+      .pipe(gulp.dest('./css'))
   })
 });
+// Compress css
+gulp.task('minify-css', function() {
+  return gulp.src('css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/css'));
+});
 
-// compres JS
+// Compres JS
 gulp.task('compress', function (cb) {
   pump([
         gulp.src('./js/**/*.js'),
@@ -30,7 +37,7 @@ gulp.task('compress', function (cb) {
   );
 });
 
-// compress html
+// Compress html
 gulp.task('minify', function() {
   return gulp.src('./*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
@@ -44,4 +51,12 @@ gulp.task('images', function(cb) {
         progressive: true,
         interlaced: true
     })).pipe(gulp.dest('dist/images')).on('end', cb).on('error', cb);
+});
+
+//build
+gulp.task('build', function(callback) {
+  runSequence('minify-css',
+              ['compress', 'minify'],
+              'images',
+              callback);
 });
