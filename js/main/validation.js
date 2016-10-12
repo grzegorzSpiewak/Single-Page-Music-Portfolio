@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   Validation.prototype.validateInput = function (input) {
     if (input.name === 'email' && input.value.indexOf('@') === -1) {
-      input.style.border='1px solid rgba(255, 0, 0, 0.3)'
+      input.style.border= '1px solid rgba(255, 0, 0, 0.3)'
       return false
     } else {
-      input.style.border='1px solid rgba(45, 134, 37, 0.6)'
+      input.style.border= '1px solid rgba(45, 134, 37, 0.6)'
     }
 
     if (input.name === 'name' && input.value.length < 5) {
-      input.style.border='1px solid rgba(255, 0, 0, 0.3)'
+      input.style.border= '1px solid rgba(255, 0, 0, 0.3)'
       return false
     } else {
-      input.style.border='1px solid rgba(45, 134, 37, 0.6)'
+      input.style.border= '1px solid rgba(45, 134, 37, 0.6)'
     }
 
     return true
