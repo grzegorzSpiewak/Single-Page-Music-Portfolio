@@ -53,7 +53,7 @@ gulp.task('images', function(cb) {
     })).pipe(gulp.dest('dist/images')).on('end', cb).on('error', cb);
 });
 
-//build
+// Build
 gulp.task('build', function(callback) {
   runSequence('minify-css',
               ['compress', 'minify'],

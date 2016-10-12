@@ -1,55 +1,55 @@
 .equalizer {
-    width: 300px;
-    height: 300px;
-    margin-top: -20px;
-    border:10px solid $main-black;
-    border-radius:50%;
+  width: 300px;
+  height: 300px;
+  margin-top: -20px;
+  border:10px solid $main-black;
+  border-radius:50%;
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  &:after {
+    content:'Guy in Headphones';
+    font-family: 'Raleway', sans-serif;
     position: absolute;
-    top:50%; left:50%;
+    bottom: -40px;
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    color: $main-black;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
+  &.paused {
     transform: translate(-50%,-50%);
-    cursor: pointer;
+    span{
+      height: 20px !important;  // Stops equalizer animation
+    }
     &:after {
-        content:'Guy in Headphones';
-        font-family: 'Raleway', sans-serif;
-        position: absolute;
-        bottom: -40px;
-        width: 100%;
-        text-align: center;
-        font-weight: 900;
-        color: $main-black;
-        font-size: 12px;
-        letter-spacing: 0.6px;
+      content: 'Get hipnotized';
     }
-    &.paused {
-        transform: translate(-50%,-50%);
-        span{
-            height: 20px !important;  // Stops equalizer animation
-        }
-        &:after {
-            content: 'Get hipnotized';
-        }
-    }
-    span {
-        background-color: $main-black;
-        width: 14px;
-        height: 0px;
-        bottom:32px; left:50%;
-        transform: translate(-50%,0);
-        display: block;
-        position: absolute;
-        transition:height 0.2s linear;
+  }
+  span {
+    background-color: $main-black;
+    width: 14px;
+    height: 0px;
+    bottom:32px; left:50%;
+    transform: translate(-50%,0);
+    display: block;
+    position: absolute;
+    transition:height 0.2s linear;
 
-        &:nth-child(1) {
-            margin-left: -40px;
-        }
-        &:nth-child(2) {
-            margin-left: -20px;
-        }
-        &:nth-child(4) {
-            margin-left: 20px;
-        }
-        &:nth-child(5) {
-            margin-left: 40px;
-        }
+    &:nth-child(1) {
+        margin-left: -40px;
     }
+    &:nth-child(2) {
+        margin-left: -20px;
+    }
+    &:nth-child(4) {
+        margin-left: 20px;
+    }
+    &:nth-child(5) {
+        margin-left: 40px;
+    }
+  }
 }
